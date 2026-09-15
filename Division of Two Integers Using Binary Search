@@ -1,0 +1,10 @@
+dividend,divisor=map(int,input().split())
+s=int(dividend/divisor)
+int_max=+2147483647
+int_min=-2147483647
+if s>int_max:
+    print(int_max)
+elif s<int_min:
+    print(int_min)
+else:
+    print(s)    

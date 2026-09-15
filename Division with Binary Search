@@ -1,0 +1,15 @@
+m,n=map(int,input().split())
+low=0
+high=m
+ans=0
+while low<high:
+    mid=(high+low)//2
+    if mid*n==m:
+        ans=mid
+        break
+    elif mid*n<m:
+        ans=mid
+        low=mid+1
+    else:
+        high=mid-1
+print(ans)                

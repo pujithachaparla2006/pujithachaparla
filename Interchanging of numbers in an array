@@ -1,0 +1,8 @@
+a=int(input())
+arr=list(map(int,input().split()))
+small=min (arr)
+large=max (arr)
+small_index=arr.index(small)
+large_index=arr.index(large)
+arr[small_index],arr[large_index]=arr[large_index],arr[small_index]
+print(*arr)

@@ -1,0 +1,10 @@
+n, m = map(int, input().split())
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+c = sorted(a + b)
+total = n + m
+if total % 2 == 0:
+    median = (c[total // 2 - 1] + c[total // 2]) / 2
+else:
+    median = float(c[total // 2])
+print(median)

@@ -1,0 +1,16 @@
+n = int(input())
+arr = list(map(int, input().split()))
+key = None
+count = 0
+for num in arr:
+    if count == 0:
+        key = num
+        count = 1
+    elif num == key:
+        count += 1
+    else:
+        count -= 1
+if arr.count(key) > n // 2:
+    print(key)
+else:
+    print(-1)

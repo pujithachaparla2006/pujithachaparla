@@ -1,0 +1,21 @@
+A,B=map(int,input().split())
+def binary_gcd(a,b):
+    if a==0:
+        return b
+    if b==0:
+        return a
+    common=1
+    while a%2==0 and b%2==0:
+        a=a//2
+        b=b//2
+        common*=2
+    while a%2==0:
+        a=a//2
+    while b!=0:
+        while b%2==0:
+            b=b//2
+        if a>b:
+            a,b=b,a
+        b=b-a
+    return a*common
+print(binary_gcd(A,B))

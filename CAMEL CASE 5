@@ -1,0 +1,16 @@
+n = int(input())
+words = input().split(",")
+pattern = input()
+ans = []
+for word in words:
+    caps = ""
+    for ch in word:
+        if ch.isupper():
+            caps += ch
+    if caps.startswith(pattern):
+        ans.append(word)
+if ans:
+    for word in ans:
+        print(word)
+else:
+    print("No match found")

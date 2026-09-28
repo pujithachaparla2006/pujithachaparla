@@ -1,0 +1,35 @@
+# Wildcard Pattern Matching
+s = input().strip()
+p = input().strip()
+i = 0
+j = 0
+# Position of last '*'
+star = -1
+match = 0
+while i < len(s):
+    # Characters match or pattern has ?
+    if j < len(p) and (p[j] == s[i] or p[j] == '?'):
+        i += 1
+        j += 1
+    # Pattern has *
+    elif j < len(p) and p[j] == '*':
+        star = j
+        match = i
+        j += 1
+    # Previous * can match one more character
+    elif star != -1:
+        j = star + 1
+        match += 1
+        i = match
+    else:
+        print(0)
+        break
+else:
+    # Remaining characters in pattern must all be *
+    while j < len(p) and p[j] == '*':
+        j += 1
+    if j == len(p):
+        print(1)
+    else:
+        print(0)
+        

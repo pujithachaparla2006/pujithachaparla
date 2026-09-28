@@ -1,0 +1,8 @@
+import math
+A, B, T = map(int, input().split())
+if T > max(A, B):
+    print("NO")
+elif T % math.gcd(A, B) == 0:
+    print("YES")
+else:
+    print("NO")
